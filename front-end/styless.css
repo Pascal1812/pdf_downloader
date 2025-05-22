@@ -1,0 +1,177 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #3498DB;
+    --accent-color: #E74C3C;
+    --background-color: #ECF0F1;
+    --text-color: #2C3E50;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bill-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.bill-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.bill-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.bill-header h1 {
+    color: var(--primary-color);
+    font-size: 36px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    display: inline-block;
+}
+
+.bill-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.bill-header p {
+    color: var(--text-color);
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.bill-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(236, 240, 241, 0.3);
+    border-radius: 8px;
+}
+
+.bill-details p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.bill-details strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.bill-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 30px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.bill-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.bill-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.bill-table tbody tr:nth-child(even) {
+    background-color: rgba(236, 240, 241, 0.3);
+}
+
+.bill-table tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.bill-total {
+    text-align: right;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(236, 240, 241, 0.3);
+    border-radius: 8px;
+}
+
+.bill-total p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.bill-total p:last-child {
+    font-size: 20px;
+    color: var(--accent-color);
+    font-weight: bold;
+    padding-top: 10px;
+    border-top: 2px solid #eee;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 30px;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .bill-container {
+        box-shadow: none;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .download-btn {
+        display: none;
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Invoice</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <div class="bill-container" id="bill-content">
+        <div class="bill-header">
+            <h1>INVOICE</h1>
+            <p>Invoice #: INV-2024-001</p>
+            <p>Date: <span id="current-date"></span></p>
+            <p>Due Date: <span id="due-date"></span></p>
+        </div>
+
+        <div class="bill-details">
+            <div class="from-details">
+                <p>
+                    <strong>From:</strong>
+                    ACME Corporation<br>
+                    123 Business Street<br>
+                    Tech Valley, Silicon City<br>
+                    contact@acmecorp.com<br>
+                    Tel: (555) 123-4567
+                </p>
+            </div>
+
+            <div class="to-details">
+                <p>
+                    <strong>Bill To:</strong>
+                    Client Industries Ltd.<br>
+                    456 Commerce Avenue<br>
+                    Business District, Metro City<br>
+                    billing@clientind.com<br>
+                    Tel: (555) 987-6543
+                </p>
+            </div>
+        </div>
+
+        <table class="bill-table">
+            <thead>
+                <tr>
+                    <th>Item Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Premium Web Development Services</td>
+                    <td>1</td>
+                    <td>$2,500.00</td>
+                    <td>$2,500.00</td>
+                </tr>
+                <tr>
+                    <td>UI/UX Design Package</td>
+                    <td>1</td>
+                    <td>$1,800.00</td>
+                    <td>$1,800.00</td>
+                </tr>
+                <tr>
+                    <td>Cloud Hosting (Annual)</td>
+                    <td>1</td>
+                    <td>$600.00</td>
+                    <td>$600.00</td>
+                </tr>
+                <tr>
+                    <td>SEO Optimization</td>
+                    <td>2</td>
+                    <td>$750.00</td>
+                    <td>$1,500.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="bill-total">
+            <p><strong>Subtotal:</strong> $6,400.00</p>
+            <p><strong>Tax (10%):</strong> $640.00</p>
+            <p><strong>Total:</strong> $7,040.00</p>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <button onclick="downloadPDF()" class="download-btn">Download Invoice PDF</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
